@@ -1,3 +1,5 @@
+/*print input lines longer than 10 chars */
+
 #include <stdio.h>
 
 int get_line(char line[]); /*returns length of line */
