@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /* returns position of right most occurence of t in s, else -1 */
 int strrindex(char s[], char t[]);
