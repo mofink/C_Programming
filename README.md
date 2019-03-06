@@ -1,1 +1,1 @@
-Random scripts I've written while learning C
+Random programs I've written while learning C
