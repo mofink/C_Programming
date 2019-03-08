@@ -161,7 +161,7 @@ int buildpath(char *filename, char *mypath, char *dir)
 	
 	while (c = mypath[i++])
 	{
-		
+		 
 		if (c == ':')
 		{
 			sprintf(filename,"%s/%s", filename, command->name);
