@@ -1,4 +1,7 @@
 /* demonstrates that ctime() is the same as asctime(localtime()) */
+/* also this is a neat article about time_t and the year 2038 problem:
+http://www.rogermwilcox.com/Y2038.html */
+
 
 #include <stdio.h>
 #include <time.h>
