@@ -1,4 +1,5 @@
-/* NOTE: THIS WAS WRITTEN FOR LINUX SYSTEMS */
+/* NOTE: THIS WAS WRITTEN FOR LINUX SYSTEMS
+   it should run on macOS but the compiler might grumble a bit */
 
 #include <stdio.h>
 #include <string.h>
