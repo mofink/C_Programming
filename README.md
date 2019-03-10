@@ -1,1 +1,1 @@
-Various programs I've written while learning C
+Various programs I've written in C
