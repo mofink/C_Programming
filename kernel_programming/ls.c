@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <getopt.h>
+#include <stdlib.h>
 
 void print_help(void);
 
@@ -12,7 +13,7 @@ int main(int argc, char *argv[])
 	struct option long_options[] =  /* list of structs */
 	{	/* { long argument name (string constant), has_argument, NULL, short argument (char) } */
 		{"all", 0, NULL, 'a'},
-		{"long", 0, NULL, 'l'}
+		{"long", 0, NULL, 'l'},
 		{"reverse", 0, NULL, 'r'},
 		{"recursive", 0, NULL, 'R'},
 		{"help", 0, NULL, 'h'},
@@ -45,7 +46,6 @@ int main(int argc, char *argv[])
 				reversed = 1;
 
 			case 'R':
-				int ggg;
 				//implement recursive
 
 			case 'h':
