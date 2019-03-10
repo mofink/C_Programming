@@ -1,6 +1,6 @@
 /* limited implementation of ls UNIX command */
-/* Note that getopt.h is NOT part of the POSIX standard, rather it is a GNU extension 
-for POSIX use unistd.h */
+/* Note that getopt.h is a GNU extension 
+can also use unistd.h */
 
 #include <stdio.h>
 #include <getopt.h>
