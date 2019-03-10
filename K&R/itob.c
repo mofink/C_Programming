@@ -6,7 +6,7 @@
 void itob(int n, char s[], int b);
 void reverse_str(char s[]);
 
-int main()
+int main() 
 {
 	char s[1000];
 	int n = 100;
