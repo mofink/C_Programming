@@ -40,7 +40,7 @@ int main(void)
 		char *dir = ".";
 		
 		/* frills for fun. should move buf def to outside of loop for efficiency but I want to keep it all together for now */
-		char *buf;
+		char *buf = (char *) malloc(sizeof(char *));
 		buf = getlogin();
 		char cwd[MAXLEN];
 		printf("%s@%s$ ", buf, getcwd(cwd, sizeof(cwd)));
@@ -133,7 +133,7 @@ void assign_to_struct(struct command_struct *command, char * s, int j)
 
 void copy_word(char *s1, char *s2)
 {
-	while(*s1++ = *s2++); /* could use strcpy but I love seeing this on paper */
+	while((*s1++ = *s2++)); /* could use strcpy but I love seeing this on paper */
 }
 
 int buildpath(char *filename, char *mypath, char *dir)
@@ -159,9 +159,9 @@ int buildpath(char *filename, char *mypath, char *dir)
 		}
 	}
 	
-	while (c = mypath[i++])
+	while ((c = mypath[i++]))
 	{
-		 
+		
 		if (c == ':')
 		{
 			sprintf(filename,"%s/%s", filename, command->name);
@@ -188,5 +188,5 @@ int buildpath(char *filename, char *mypath, char *dir)
 
 	printf("COMMAND NOT FOUND\n");
 	return 0;
-} 
+}
 
