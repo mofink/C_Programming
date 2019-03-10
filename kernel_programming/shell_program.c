@@ -25,6 +25,9 @@ int main(void)
 {	
 	printf("Welcome to Mo's Terminal Application\nTo quit use the 'exit' command\n");
 	int exit_flag = 0;
+	char *buf = (char *) malloc(sizeof(char *));
+	buf = getlogin();
+	char cwd[MAXLEN];
 	while (!exit_flag)
 	{
 
@@ -39,10 +42,6 @@ int main(void)
 		int j = 0, c;
 		char *dir = ".";
 		
-		/* frills for fun. should move buf def to outside of loop for efficiency but I want to keep it all together for now */
-		char *buf = (char *) malloc(sizeof(char *));
-		buf = getlogin();
-		char cwd[MAXLEN];
 		printf("%s@%s$ ", buf, getcwd(cwd, sizeof(cwd)));
 
 		for (;;) /*infinite loop waiting for input */
@@ -89,6 +88,7 @@ int main(void)
 		{
 			exit_flag = 1;
 			printf("So long and thanks for all the fish\nExiting....\n");
+			free(buf);
 		}
 
 		
@@ -99,7 +99,6 @@ int main(void)
 				free(command->argv[i]);
 			}
 			free(filename);
-			free(buf);
 		}
 		
 
