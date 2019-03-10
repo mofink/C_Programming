@@ -1,4 +1,6 @@
-/* limited implementation of ls command */
+/* limited implementation of ls UNIX command */
+/* Note that getopt.h is NOT part of the POSIX standard, rather it is a GNU extension 
+for POSIX use unistd.h */
 
 #include <stdio.h>
 #include <getopt.h>
@@ -69,7 +71,7 @@ int main(int argc, char *argv[])
 
 	} while ( next_option != -1);
 
-	
+
 
 	return 0;
 }
