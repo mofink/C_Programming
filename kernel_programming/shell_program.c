@@ -99,6 +99,7 @@ int main(void)
 				free(command->argv[i]);
 			}
 			free(filename);
+			free(buf);
 		}
 		
 
