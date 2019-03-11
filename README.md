@@ -1,4 +1,4 @@
-This repository showcases various C programs I've written while trying to understand Unix and learn systems programming.
+This repository showcases various C programs I've written while trying to understand Linux and learn systems programming.
 
 kernel_programming is a directory for applications that interface directly with the Linux kernel and rely on system calls. While not yet complete, of particular note is the program shell\_program.c
 
