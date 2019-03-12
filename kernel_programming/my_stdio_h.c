@@ -80,6 +80,7 @@ DO NOT PEEK INSIDE *fptr
 #define _OPENR 0x1 //set if file is open for reading
 #define _OPENW 0x2 //set if file is open for writing
 #define _NBUF 0x800//set if no buffering should occur
+#define _ALFIL 0x80//set if FILE object must be freed on close 
 
 
 //type definitions
@@ -139,7 +140,30 @@ FILE * fopen(const char *name,cont char *modes);
 
 FILE * fopen(const char *name,cont char *modes)
 {
-	//
+	FILE *str;
+	int i; //need to implement size_t and change this
+	for (i = 0; i < FOPEN_MAX; ++i)
+	{
+		if (_Files[i] == NULL) //create FILE object at _Files[i] where none existed previously
+		{
+			str = (FILE *) malloc(sizeof(FILE)); //allocate memory for FILE object
+			_Files[i] = str; //point _Files[i] at allocated memory in previous step
+			_Files[i]->_Mode = _ALFIL; //free this memory location when closing stream
+			break; //done
+		}
+
+		else if (_Files[i]->_Mode == 0) //FILE object exists at this address but its stream has been closed (not freed).
+		//We can reuse it without creating new FILE. This happens when closing a standard stream
+		{
+			str = _Files[i];
+			break;
+		}
+	}
+	if (i > FOPEN_MAX)
+		return NULL; //no more space to open file
+
+
+	// need to set values in FILE and return pointer to its location
 }
 
 
