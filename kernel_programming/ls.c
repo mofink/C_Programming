@@ -5,6 +5,9 @@ can also use unistd.h */
 #include <stdio.h>
 #include <getopt.h>
 #include <stdlib.h>
+#include <dirent.h>
+#include <unistd.h>
+
 
 void print_help(void);
 
@@ -29,7 +32,6 @@ int main(int argc, char *argv[])
 	int time_format = 0;
 
 	int next_option;
-	char * program_name = argv[0];
 
 	do
 	{
@@ -70,6 +72,30 @@ int main(int argc, char *argv[])
 		}
 
 	} while ( next_option != -1);
+
+	
+
+	DIR *dir;
+	if (argc == 1)
+	{
+		dir = opendir("./");
+	}
+	else
+	{
+		dir = opendir(argv[1]);
+	}
+	
+
+	struct dirent *file; //https://www.gnu.org/software/libc/manual/html_node/Directory-Entries.html
+	while ((file = readdir(dir)) != NULL)
+	{
+		printf("%s\n",file->d_name);
+	}
+	
+	// need to implement arguments to ls as listed above
+
+
+
 
 
 
