@@ -2,4 +2,6 @@ This repository showcases various C programs I've written while trying to unders
 
 kernel_programming is a directory for applications that interface directly with the Linux kernel and rely on system calls. 
 
-K&R is a directory for the solutions to some of the exercises in the original C Programming Language (2 ed.) book by K&R. I prefer not to use library functions until I've tried to implement them myself, so you'll find some of those in there as well.
+c_standard_library is a directory for implementations of the C header files included in the standard library. Much of the code comes from P.J. Plaucer's book "The Standard C Library", comments are all my own
+
+K&R is a directory for the solutions to some of the exercises in the original C Programming Language (2 ed.) book by K&R
