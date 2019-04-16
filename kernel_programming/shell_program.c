@@ -21,7 +21,7 @@ void assign_to_struct(struct command_struct *command,char * s, int j);
 void copy_word(char *s1, char *s2);
 int count_array(char **s);
 int buildpath(char *s,char *mypath, char *dir);
-
+ 
 int main(void)
 {	
 	printf("Welcome to Mo's Terminal Application\nTo quit use the 'exit' command\n");
